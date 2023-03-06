@@ -1,27 +1,48 @@
 <!--
 
 Project: {}
-Story: {}
+Story: 1{}
 Issues:
-  - {}
 
+--
+
+Title: {}
+Link: {}
  -->
-# Pipe Release
 
-## Details
+#
+
+# Tracking Details / Relevant Information
 
 ### Release
 
 - Version: 1.2.1
-  
-## Requirements
 
-- [ ] Users are able to test
+---
 
-## Status
+# Story
+
+{ }
+
+### Requirements
+
+- [ ] {}
+
+### Acceptance Criteria
+
+- [ ] {}
+
+---
+
+# Status
+
+### Tasks
+
+- [ ]
 
 ### Blockers
 
-- [ ] Customer Portal compatibility (filtering feature?)
-- [ ] Blocked on Dan Merchant approval of spec
-- [ ] Blocked on Dan Merchant approval of merge request
+- [ ] {}
+
+<!-- Tracking -->
+/assign @savichak
