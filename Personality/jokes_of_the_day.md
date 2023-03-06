@@ -7,6 +7,6 @@ Jokes:
 
 Available:
 
-- 
+-
 
 Date
