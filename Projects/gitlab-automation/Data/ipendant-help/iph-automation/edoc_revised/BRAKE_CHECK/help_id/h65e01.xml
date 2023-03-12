@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book>
+<title> Brake Check </title>
+<toc/>
+<chapter>
+<title> Brake Check </title>
+<sect1>
+<title>
+                <emphasis role="bold">General description</emphasis>
+            </title>
+            <para>Brake Check is a preventive maintenance function. </para>
+            <para>This function allows you to perform early detection of potential brake
+                failure.</para>
+            <para>You can perform brake check by calling the KAREL program BC_SETUP from TP
+                program.</para>
+</sect1>
+<sect1>
+<title> Enable/Disable setting </title>
+            <para>You can customize enable/disable brake check for each axis.</para>
+            <para>If you want to perform brake check on an axis, please set the axis setting to
+                “Enable” in Enable/Disable setting screen. Otherwise, please set the axis setting to
+                “Disable”. On robot axes, the default setting is “Enable”. On an axis other than
+                robot axes (aux axis, servo gun, or etc.), the default setting is “Disable”.</para>
+</sect1>
+        <sect1>
+            <title>Brake Torque Setting</title>
+            <para>This function needs the specification value of brake torque for each axis in order
+                to determine the torque that is to be commanded during brake check. </para>
+            <para>On robot axes, the brake torques have been set automatically, however, on an axis
+                other than robot axes (aux axis, servo gun, or etc.), brake torque is not set
+                automatically, so please manually set the brake torque if you need brake check on
+                such an axis. For the specification value of brake torque, please refer to “BRAKE
+                SPECIFICATIONS” on the corresponding AC SERVO MOTOR DESCRIPTIONS.</para>
+        </sect1>
+</chapter>
+</book>
