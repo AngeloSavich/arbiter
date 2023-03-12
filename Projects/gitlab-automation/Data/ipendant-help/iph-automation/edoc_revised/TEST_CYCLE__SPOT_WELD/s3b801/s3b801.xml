@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book id="bookFRNA545eg">
+<title>SPOT WELD TEST CYCLE</title>
+<chapter id="chapterFRNA1456eg">
+    <title/>
+    <sect1>
+      <title> SPOT WELD TEST CYCLE</title>
+      <para/>
+      <para>This page describes the settings for the test cycle to confirm the correct operation of
+        the robot or gun before automatic operation is executed in the conditions of production.
+        This page describes the spot weld test cycle screen and its items.</para>
+      <para>You must set the following items to appropriate values.</para>
+      <table frame="all">
+        <title>Spot weld test cycle items</title>
+        <tgroup cols="2">
+          <colspec colnum="1" colname="col1"/>
+          <colspec colnum="2" colname="col2"/>
+          <thead>
+            <row>
+              <entry>Items</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>Gun operation</para>
+                <para>Cannot be changed if a program is running</para>
+              </entry>
+              <entry>
+                <para>This item allows you to select the type of gun mode that will be used when
+                  running the program.<itemizedlist>
+                    <listitem>
+                      <para>STROKE - opens and closes the gun at each weld point. Passing current
+                        depends on the setting of weld controller mode.</para>
+                    </listitem>
+                    <listitem>
+                      <para>NOSTROKE - does not close and open the gun, and does NOT pass current
+                        through the gun. Backup stroke will still function. The weld controller mode
+                        must be set to NOWELD.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed on this screen.
+                  Use Stroke/NO STROKE cell input signal to control this.<orderedlist>
+                    <listitem>
+                      <para>
+                        <itemizedlist>
+                          <listitem>
+                            <para>Program select mode is RSR/PNS/OTHER</para>
+                          </listitem>
+                          <listitem>
+                            <para>Teach pendant is DISABLE</para>
+                          </listitem>
+                        </itemizedlist>
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>
+                        <itemizedlist>
+                          <listitem>
+                            <para>Program select mode is STYLE</para>
+                          </listitem>
+                          <listitem>
+                            <para>Teach pendant is DISABLE</para>
+                          </listitem>
+                          <listitem>
+                            <para>3 mode switch is AUTO</para>
+                          </listitem>
+                        </itemizedlist>
+                      </para>
+                    </listitem>
+                  </orderedlist></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>Weld controller mode</para>
+                <para>Cannot be changed if a program is running</para>
+              </entry>
+              <entry>
+                <para>This item allows you to select the type of weld mode that will be used when
+                  running the program<itemizedlist>
+                    <listitem>
+                      <para>WELD - when the gun closes, the weld controller executes the appropriate
+                        schedule and passes current through the gun.</para>
+                    </listitem>
+                    <listitem>
+                      <para>NOWELD - no current passes through the gun when the weld controller
+                        executes the weld sequence. NOTE: If you do not use “Enable weld” signal in
+                        weld interface I/O, you have to set the weld controller into NOWELD by your
+                        plc.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed on this screen.
+                  Use Weld/NO WELD cell input signal to control this.<orderedlist>
+                    <listitem>
+                      <para>
+                        <itemizedlist>
+                          <listitem>
+                            <para>Program select mode is RSR/PNS/OTHER</para>
+                          </listitem>
+                          <listitem>
+                            <para>Teach pendant is DISABLE</para>
+                          </listitem>
+                        </itemizedlist>
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>
+                        <itemizedlist>
+                          <listitem>
+                            <para>Program select mode is STYLE</para>
+                          </listitem>
+                          <listitem>
+                            <para>Teach pendant is DISABLE</para>
+                          </listitem>
+                          <listitem>
+                            <para>3 mode switch is AUTO</para>
+                          </listitem>
+                        </itemizedlist>
+                      </para>
+                    </listitem>
+                  </orderedlist></para>
+                <note>
+                  <para>In case of integrated weld controller, the weld controller is started with
+                    no current. In case of digital interface weld controller, PLC should command
+                    NOWELD to the weld controller. So WELD/NO WELD input signal of Cell Interface
+                    I/O should be set to OFF.</para>
+                </note>
+                <para>Refer to section 8.2 for the way not to output weld schedule.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>Tryout mode</entry>
+              <entry>
+                <para>This item enables and disables the ability of the robot to tryout mode.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - In case of servo gun, thickness on SPOT instruction need not
+                        be changed, and pressure shortage error is not generated even if there is no
+                        panel.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - In case of servo gun, pressure motion is normally executed
+                        with thickness for pressure on SPOT instruction.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed on this screen.
+                  Use Tryout Mode cell input signal to control this.<itemizedlist>
+                    <listitem>
+                      <para>Teach pendant is DISABLE</para>
+                    </listitem>
+                    <listitem>
+                      <para>3 mode switch is AUTO</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <note>
+                  <para>You have to assign the tryout input in cell interface to use this
+                    mode.</para>
+                </note>
+                <para>If the tryout input is not defined, you can not change the status of this
+                  item. The Tryout cell output signal reports the status of tryout mode.</para>
+                <note>
+                  <para>Even if tryout mode is enabled, open distance and trajectory of tips and
+                    timing of deceleration is same as case that there is panel (tryout mode is
+                    disabled). Even if there is no panel, gun motion is decelerated before panel
+                    position. So cycle time of tryout mode is difference from cycle time of case
+                    that there is panel (tryout mode is disabled).</para>
+                </note>
+                <note>
+                  <para>Even If welding is enabled during tryout mode , welding is executed.</para>
+                </note>
+              </entry>
+            </row>
+            <row>
+              <entry><emphasis role="bold">Tryout mode weld schedule</emphasis></entry>
+              <entry>
+                <para>This field allows the programmed weld schedule to be automatically overridden
+                  when tryout mode is active. The weld schedule output is changed to the value set
+                  in this field.</para>
+                <para>Tipdress instructions are not affected.</para>
+                <para>Set to 0 to disable this feature.</para>
+              </entry>
+            </row>
+            <row>
+              <entry><emphasis role="bold">Weld IO Sim</emphasis></entry>
+              <entry>
+                <para>This item enables the weld simulation. Refer to the next section for more
+                  details.</para>
+                <para>When following conditions consist, this item cannot be changed.<itemizedlist>
+                    <listitem>
+                      <para>Teach pendant is DISABLE</para>
+                    </listitem>
+                    <listitem>
+                      <para>3 mode switch is AUTO</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </entry>
+            </row>
+            <row>
+              <entry>Force process complete</entry>
+              <entry>
+                <para>This item allows you to force the process complete signal.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - Process Complete is turned on immediately. Process Complete
+                        will be cleared at the start of the next style. The Process Alert signal is
+                        turned on whenever Force Process Complete is enabled, and a warning error is
+                        displayed on the ALARMS screen to indicate that this abnormal operation was
+                        performed.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - Process Complete is turned off.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed.<itemizedlist>
+                    <listitem>
+                      <para>Teach pendant is DISABLE</para>
+                    </listitem>
+                    <listitem>
+                      <para>3 mode switch is AUTO</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </entry>
+            </row>
+            <row>
+              <entry>Update weld pressures</entry>
+              <entry>
+                <para>If the weld controller controls weld pressure (the Controls weld pressure item
+                  is enabled at spot config), Update weld pressures is displayed.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - This will force an update of the weld pressure table from the
+                        weld controller.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - Update Weld Pressures is turned off</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed.<itemizedlist>
+                    <listitem>
+                      <para>Teach pendant is DISABLE</para>
+                    </listitem>
+                    <listitem>
+                      <para>3 mode switch is AUTO</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>Tip dress when TP is On:</para>
+                <para>Dresser Rotation</para>
+              </entry>
+              <entry>
+                <para>This item allows you to enable or disable rotation of the tip dresser cutter
+                  in tip dress instruction.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - This state enables the cutter to rotate in tip dress
+                        instruction.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - This state disables the cutter to rotate in tip dress
+                        instruction.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed and rotation of
+                  the cutter is enabled.<itemizedlist>
+                    <listitem>
+                      <para>Teach pendant is DISABLE</para>
+                    </listitem>
+                    <listitem>
+                      <para>3 mode switch is AUTO</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>This item is displayed only when servo tip dresser option is installed.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>Tip dress when TP is On:</para>
+                <para>Pressure on Dress</para>
+              </entry>
+              <entry>
+                <para>This item allows you to enable or disable gun closing in tip dress instruction.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - This state enables the gun to close in tip dress
+                        instruction.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - This state disables the gun to close in tip dress
+                        instruction.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed and gun closing
+                  is enabled.</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>Teach pendant is DISABLE</para>
+                  </listitem>
+                  <listitem>
+                    <para>3 mode switch is AUTO</para>
+                  </listitem>
+                </itemizedlist>
+                <para>This item is displayed only when servo tip dresser option is installed.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>Tip dress axes motion</entry>
+              <entry>
+                <para>This item allows you to lock or unlock the tip dresser.<itemizedlist>
+                    <listitem>
+                      <para>ENABLED - Tip dresser is unlocked so is available and error will be
+                        posted if the controller cannot communicate with the tip dresser.</para>
+                    </listitem>
+                    <listitem>
+                      <para>DISABLED - Tip dresser is locked so is not available, but TP program
+                        with tip dress instruction can be executed even if tip dresser is not
+                        connected.</para>
+                    </listitem>
+                  </itemizedlist></para>
+                <para>When following conditions consist, this item cannot be changed.</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>Teach pendant is DISABLE</para>
+                  </listitem>
+                  <listitem>
+                    <para>3 mode switch is AUTO</para>
+                  </listitem>
+                </itemizedlist>
+                <para>This item is displayed only when servo tip dresser option is installed.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <procedure>
+        <title>Spot Weld Test Cycle Menu</title>
+        <step>
+          <para>Press the [MENU] key, then select TEST CYCLE.</para>
+        </step>
+        <step>
+          <para>Press F1, [TYPE], then select Spot Weld.</para>
+          <figure>
+            <title>Spot Weld screen</title>
+            <informalfigure>
+              <mediaobject>
+                <imageobject>
+                  <imagedata fileref="Spot_Weld.PNG"/>
+                </imageobject>
+              </mediaobject>
+            </informalfigure>
+          </figure>
+        </step>
+        <step>
+          <para>Set the conditions as desired.</para>
+        </step>
+      </procedure>
+    </sect1>
+    <sect1>
+      <title>WELD SIMULATION</title>
+      <para>Weld Simulate allows you to test the cycle time of a job without having to set up any
+        external hardware I/O signals.</para>
+      <para>When you use weld simulate to test the cycle time of a job, the robot will close the
+        gun, and wait for a period of time that is equal to the weld duration you specify on the
+        spot weld test cycle screen. After the robot has simulated the weld, it will move to the
+        next point in the welding sequence, and simulate another weld, until the weld sequence has
+        been completed.</para>
+      <para><emphasis role="bold">Using weld Simulate</emphasis></para>
+      <figure>
+        <title>Weld Simulate</title>
+        <informalfigure>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="Weld_Simulate.PNG"/>
+            </imageobject>
+          </mediaobject>
+        </informalfigure>
+      </figure>
+      <para>The following table shows the Weld Simulate setup items.</para>
+      <table frame="all">
+        <title>Weld simulate setup items</title>
+        <tgroup cols="2">
+          <colspec colnum="1" colname="col1"/>
+          <colspec colnum="2" colname="col2"/>
+          <thead>
+            <row>
+              <entry>Item</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>Weld IO Sim</para>
+                <para>Default : DISABLE</para>
+              </entry>
+              <entry>
+                <para>This item enables or disables weld simulation.</para>
+                <para>When sim is disabled, robot sends schedule GOUT to weld controller, waits for
+                  weld complete DIN and checks fault input.</para>
+                <para>When sim is enabled, robot only waits for the weld sim duration time then
+                  completes. I/O operations between robot and weld controller are bypassed when weld
+                  sim is active</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>Weld Duration</para>
+                <para>Default: 500 Min.: 0 Max.: 32767</para>
+              </entry>
+              <entry>
+                <para>The duration of the dwell (wait) during the weld when weld simulation is
+                  active.</para>
+                <note>
+                  <para>Sometimes sim weld time is not specified value.</para>
+                </note>
+              </entry>
+            </row>
+            <row>
+              <entry>Inform output PLC</entry>
+              <entry>This output will turn on when weld simulation is active and turn off when weld
+                simulation is inactive</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>In order for a weld to be simulated, the following conditions must be true:<itemizedlist>
+          <listitem>
+            <para>You have to set Weld controller mode to DISABLE.</para>
+          </listitem>
+          <listitem>
+            <para>You have to set Weld IO sim to ENABLE.</para>
+          </listitem>
+          <listitem>
+            <para>You have to enter a value for the WeldDuration.</para>
+          </listitem>
+        </itemizedlist></para>
+      <caution>
+        <itemizedlist>
+          <listitem>
+            <para>When you run a job that uses the weld simulate feature in the place of a weld
+              controller, the weld schedule and other I/O associated with the weld schedule will not
+              be sent to the weld controller.</para>
+          </listitem>
+          <listitem>
+            <para>When Weld controller mode is enable, Weld IO sim becomes disable forcibly. You can
+              not enable Weld IO sim when Weld controller mode is enable.</para>
+          </listitem>
+          <listitem>
+            <para>When power cycle, Weld IO sim becomes disable forcibly.</para>
+          </listitem>
+        </itemizedlist>
+      </caution>
+      <para>A report that shows the cycle time of the simulated weld sequence will be displayed on
+        both the User screen and the Status screen.</para>
+      <para>When you run a job that uses weld simulation in place of a weld controller, you need to
+        run the job from either the Use Operator Panel (UOP) or the Standard Operator Panel (SOP)
+        for the cycle time report to be displayed on the User and Status screens.</para>
+      <para>When using weld simulate, the cycle time will not be displayed on the User and Status
+        screens, when the job is run using the shift and forward keys on the teach pendant.</para>
+      <para> When using weld simulate, the robot must be in NOWELD.</para>
+    </sect1>
+  </chapter>
+</book>
