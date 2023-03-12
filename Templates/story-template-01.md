@@ -1,42 +1,61 @@
 <!--
 
-Project: {}
-Story: 1{}
+Project: []
+Story: []
 Issues:
 
+
 --
-
-Title: {}
-Link: {}
- -->
-
-#
-
-# Tracking Details / Relevant Information
-
-### Release
-
-- Version: 1.2.1
+Title: iPendant Help Wiki Process & Template Updates | Determine a process for FANUC Japan input on iPendant
+Labels:
+  - []
 
 ---
 
-# Story
+Issue Links:
+  - {}
+ -->
+
+
+#
+
+## Relevant Information
+
+---
+
+## Story
 
 { }
-
-### Requirements
-
-- [ ] {}
 
 ### Acceptance Criteria
 
 - [ ] {}
+  
+### Test Plan / Definition of Done (test details additional to the acceptance criteria)
+
+- [ ]
 
 ---
 
-# Status
+## Tracking Details
+
+- Sprint: []
+- Merge Request: []
+  Spec: []
+
+### Release
+
+- Version: {}
+
+### Status
+
+{ }
 
 ### Tasks
+
+- [ ]
+
+### Technical Requirements
 
 - [ ]
 
@@ -46,3 +65,37 @@ Link: {}
 
 <!-- Tracking -->
 /assign @savichak
+
+---
+
+# Development Details
+
+-----------------------------------------
+
+
+GUIDE:
+
+Requirement Type Abbreviations
+
+
+| ABRV  | Description         |
+| ----- | ------------------- |
+| S     | Stakeholder         |
+| B     | Business            |
+| U     | User                |
+| F     | Functional          |
+| NF    | Non-Function        |
+
+
+| ABRV  | Description         |
+| ----- | ------------------- |
+| S     | Story               |
+| C     | Constraint          |
+| A     | Assumption          |
+| R     | Requirement         |
+
+US: User Story
+UR: User Requirement
+UC: User Constraint
+
+BR: Business
