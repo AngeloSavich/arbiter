@@ -21,7 +21,10 @@
 
 from Source.CLI import CLI
 
+from CLI import CLI
+
 print("MAIN")
-CLI.Start()
+cli = CLI()
+cli.Start()
 
 # See PyCharm help at https:I//www.jetbrains.com/help/pycharm/
