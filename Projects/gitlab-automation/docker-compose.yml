@@ -3,6 +3,7 @@ version: "3.9"
 services:
 
   test:
+    container_name: pytest
     image: python:3.11
     build:
       context: .
