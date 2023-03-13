@@ -24,7 +24,12 @@
 # from CLI import CLI
 
 
-print("MAIN", flush=True)
+def main(): 
+    print("MAIN", flush=True)
+
+if __name__ == '__main__':
+    main()
+
 # cli = CLI()
 # cli.Start()
 
