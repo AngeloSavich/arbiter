@@ -21,8 +21,9 @@
 
 # from Source.CLI import CLI
 
-from Source.GitLab.InstanceBuilder.CLI import CLI
+# from Source.GitLab.InstanceBuilder.CLI import CLI
 
+from CLI import CLI
 
 def main(): 
     print("MAIN", flush=True)
@@ -31,6 +32,6 @@ if __name__ == '__main__':
     main()
 
 cli = CLI()
-cli.Start()
+cli.Run_IPH()
 
 # See PyCharm help at https:I//www.jetbrains.com/help/pycharm/
