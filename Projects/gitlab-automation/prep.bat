@@ -1,5 +1,5 @@
-.\venv\Scripts\activate
+.\venv\Scripts\activate &
 
-pip3 freeze > requirements.tx
+pip freeze > requirements.txt
 
-.\venv\Scripts\deactivate
+ .\venv\Scripts\deactivate

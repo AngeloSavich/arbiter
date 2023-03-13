@@ -6,6 +6,7 @@ FROM python:3.11
 
 # Add all required files
 ADD Source/* .
+ADD requirements.txt .
 
 # Setup environment
 RUN pip install -r requirements.txt
