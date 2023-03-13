@@ -9,8 +9,8 @@ from Config import Config
 gl = gitlab.Gitlab(url=Config.url_gitlab, private_token=Config.gitlab_access_token)
 
 if Config.Runtime.Mode:
-    gl.auth()
-    gl.enable_debug()
+    # gl.auth()
+    # gl.enable_debug()
 
 
 class CLI:
