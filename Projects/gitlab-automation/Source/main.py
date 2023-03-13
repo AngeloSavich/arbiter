@@ -19,12 +19,13 @@
 #
 # ssl.match_hostname = match_hostname_bugfix_ssl_py_2_7_9
 
-from Source.CLI import CLI
+# from Source.CLI import CLI
 
-from CLI import CLI
+# from CLI import CLI
 
-print("MAIN")
-cli = CLI()
-cli.Start()
+
+print("MAIN", flush=True)
+# cli = CLI()
+# cli.Start()
 
 # See PyCharm help at https:I//www.jetbrains.com/help/pycharm/
