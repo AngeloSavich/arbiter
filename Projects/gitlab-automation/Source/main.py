@@ -21,7 +21,7 @@
 
 # from Source.CLI import CLI
 
-# from CLI import CLI
+from CLI import CLI
 
 
 def main(): 
@@ -30,7 +30,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-# cli = CLI()
-# cli.Start()
+cli = CLI()
+cli.Start()
 
 # See PyCharm help at https:I//www.jetbrains.com/help/pycharm/
