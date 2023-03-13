@@ -4,7 +4,7 @@
 
 # You can then do one for projects (issues, merge requests, scripts, labels), groups (labels, etc),syncing across multiple groups and projects (issues and merge requests and branches)
 import gitlab
-from Config import Config
+from
 
 gl = gitlab.Gitlab(url=Config.url_gitlab, private_token=Config.gitlab_access_token)
 
@@ -18,4 +18,4 @@ class CLI:
         # list all the projects
         projects = gl.projects.list(iterator=True)
         for project in projects:
-            print(project)
+            print(project, flush=True)
