@@ -6,7 +6,7 @@ chmod u+x -R *
 
 git pull
 
-docker compose up --build --remove-orphans --force-recreate > 2>&1
+docker compose up --build --remove-orphans --force-recreate
 
 ###############################
 ## Testing Output
