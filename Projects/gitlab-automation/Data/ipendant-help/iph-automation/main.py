@@ -29,31 +29,7 @@ IPH_ITERATION_NAME=f'{IPH_ITERATION}{IPH_ITERATION_SUFFIX}'
 IPH_BRANCH_NAME_PREFIX = "story/"
 IPH_BRANCH_NAME = f'{IPH_BRANCH_NAME_PREFIX}{IPH_ITERATION_NAME}-updates-edoc-ipendant-help'
 
-class BranchTask:
-    # Dependent Configuration
-    # - Custom Project Configuration
 
-    # Custom Task Configuration:
-    # - Project
-    # - Version
-    # - BranchPrefix
-    #   - BranchVersion
-    #   - BranchPrefix
-
-
-    def __init__(self, project):
-        self.Project = project
-
-        _BranchVersion = 'v10.13'
-        _BranchUser = 'angelo.savich'
-        _BranchPrefix = f'user/{_BranchUser}/{_BranchVersion}/'
-        self.BranchSource = f'{_BranchPrefix}update-help-edoc-18'
-
-        _ReleaseTarget = 'prerelease'
-        self.BranchTarget = f'{_BranchVersion}/{_ReleaseTarget}'
-
-    def Run(self):
-        self.Project.branches.create({'branch': self.BranchSource, 'ref': self.BranchTarget})
 
 class MergeRequestTask:
 
