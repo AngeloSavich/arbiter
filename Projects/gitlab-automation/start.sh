@@ -1,6 +1,8 @@
 #!/bin/bash
 
-git reset --hard origin && git pull && chmod u+x -R *
+git reset --hard origin
+git pull
+chmod u+x -R *
 
 git pull
 
