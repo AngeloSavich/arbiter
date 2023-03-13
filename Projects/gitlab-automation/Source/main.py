@@ -21,6 +21,7 @@
 
 from Source.CLI import CLI
 
+print("MAIN")
 CLI.Start()
 
 # See PyCharm help at https:I//www.jetbrains.com/help/pycharm/
