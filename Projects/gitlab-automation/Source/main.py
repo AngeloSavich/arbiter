@@ -21,7 +21,7 @@
 
 # from Source.CLI import CLI
 
-from CLI import CLI
+from Source.GitLab.InstanceBuilder.CLI import CLI
 
 
 def main(): 
