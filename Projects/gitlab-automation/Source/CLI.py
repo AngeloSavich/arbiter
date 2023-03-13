@@ -19,4 +19,4 @@ class CLI:
         # list all the projects
         projects = gl.projects.list(iterator=True)
         for project in projects:
-            print(project, flush=True)
+            print(project.name_with_namespace, flush=True)
