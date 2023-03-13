@@ -4,7 +4,7 @@
 
 # You can then do one for projects (issues, merge requests, scripts, labels), groups (labels, etc),syncing across multiple groups and projects (issues and merge requests and branches)
 import gitlab
-from
+from Config import Config
 
 gl = gitlab.Gitlab(url=Config.url_gitlab, private_token=Config.gitlab_access_token)
 

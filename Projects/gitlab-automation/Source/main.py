@@ -19,7 +19,7 @@
 #
 # ssl.match_hostname = match_hostname_bugfix_ssl_py_2_7_9
 
-from Source.GitLab.CLI import CLI
+from Source.CLI import CLI
 
 CLI.Start()
 
